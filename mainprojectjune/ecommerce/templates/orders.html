@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load tz %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Orders</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">ABOUT US</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container w-50 p-5 mt-5">
+
+    {% for i in orders %}
+    <div class="container border border-2 shadow mt-5">
+   <h4 class="mt-2 fs-3">Order_no:<b>{{i.order_id}}</b></h4>
+    <p>Ordered on:<span class="text-danger">{{i.ordered_date|localtime|date:"Y-m-d"}}</span></p>
+    <p>Order Total:{{i.amount}}</p>
+     <p>Status:<span class="text-danger">{{i.delivery_status}}</span></p>
+    <hr>
+    {% for j in i.products.all %}
+    <div class="card mb-3" style="max-width:100%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{j.product.image.url}}" class="rounded-start" height="250px" width="100%" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Name:{{j.product.name}}</h5>
+        <p class="card-text">Price:{{j.product.price}}</p>
+        <p class="card-text">Qty:{{j.quantity}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endfor %}</div>
+        {% endfor %}
+
+
+
+
+
+</div>
+{% endblock %}

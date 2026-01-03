@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f(){
+            var n=document.getElementById('i').value;
+            var f=1;
+            for(let i=1;i<=n;i++){
+                f=f*i;
+            }
+            // alert(f);
+            document.getElementById('r').innerHTML=f;
+
+        }
+    </script>
+</head>
+<body>
+<input type="number" id="i">
+<button onclick="f()">Click</button><br>
+<!--Result<input type="number" id="r">-->
+Result<h1 id="r"></h1>
+
+</body>
+</html>

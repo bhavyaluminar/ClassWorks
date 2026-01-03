@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container p-5 mt-5 text-light w-50 border border-2 shadow text-center">
+  <h3>School Details</h3>
+ <table class="table table-bordered  text-light">
+   <tr>
+     <th>Name</th>
+     <td>{{school.name}}</td>
+   </tr>
+   <tr>
+     <th>Principal</th>
+     <td>{{school.principal}}</td>
+   </tr>
+   <tr>
+     <th>Location</th>
+     <td>{{school.location}}</td>
+   </tr>
+
+ </table>
+  {% if user.is_authenticated %}
+  {% if user.is_superuser == False %}
+  <div>
+      {% if can_join == True %}
+    <a class="btn btn-light" href="{% url 'studentjoin' school.id  %}">Join Now</a>
+  {% endif %}
+      {% if is_student == True %}
+      <a class="btn btn-light" href="{% url 'studentleave' %}">Leave Now</a>
+  {% endif %}
+
+  </div>
+  {% endif %}
+  {% endif %}
+    {% if user.is_authenticated %}
+  {% if user.is_superuser == True %}
+    hello
+    <ul>
+    {% for j in school.students.all %}
+        <li>Name:{{j.name}},Age:{{j.age}},Place:{{j.place}}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="why">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/why.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">simply amazing places</div>
+					<div class="section_title"><h2>Why choose us?</h2></div>
+				</div>
+			</div>
+			<div class="row why_row">
+       {% for i in places %}
+				<!-- Why item -->
+				<div class="col-lg-4 why_col">
+					<div class="why_item">
+						<div class="why_image">
+							<img src="{{i.image.url}}" height="200px" width="100%" alt="">
+							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
+								<img src="images/why_1.svg" alt="">
+							</div>
+						</div>
+						<div class="why_content text-center">
+							<div class="why_title">{{i.name}}</div>
+							<div class="why_text">
+								<p>{{i.description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+          {% endfor %}
+
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Cart</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item active">Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Cart  -->
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-main table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Product Name</th>
+                                    <th>Unit Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in cart %}  <!-- user,product,quantity,date_added -->
+                                <tr>
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+									<img class="img-fluid" src="{{i.product.image.url}}" alt="" />
+								</a>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+									{{i.product.name}}
+								</a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p>{{i.product.price}}</p>
+                                    </td>
+                                    <td class="quantity-box"><p>{{i.quantity}}</p></td>
+                                    <td class="total-pr">
+                                        <p>{{i.subtotal}}</p>
+                                    </td>
+                                    <td class="remove-pr">
+                                        {% if i.product.stock > 0 %}
+                                         <a href="{% url 'cart:addtocart' i.product.id %}">
+									<i class="fa-solid fa-plus"></i>
+								</a>
+                                        <a href="{% url 'cart:cartdecrement' i.product.id %} ">
+									<i class="fa-solid fa-minus"></i>
+								</a>
+
+                                        <a href="{% url 'cart:cartremove' i.product.id %}">
+									<i class="fas fa-times"></i>
+								</a>
+                                        {% else %}
+                                        <a href="{% url 'cart:cartdecrement' i.product.id %} ">
+									<i class="fa-solid fa-minus"></i>
+								</a>
+
+                                        <a href="{% url 'cart:cartremove' i.product.id %}">
+									<i class="fas fa-times"></i>
+								</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row my-5">
+                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="order-box">
+                        <h3>Order summary</h3>
+                        <div class="d-flex">
+                            <h4>Total</h4>
+                            <div class="ml-auto font-weight-bold"> {{total}}</div>
+                        </div>
+
+
+                        <div class="d-flex">
+                            <h4>Shipping Cost</h4>
+                            <div class="ml-auto font-weight-bold"> Free </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex gr-total">
+                            <h5>Grand Total</h5>
+                            <div class="ml-auto h5"> {{total}} </div>
+                        </div>
+                        <hr> </div>
+                </div>
+                <div class="col-12 d-flex shopping-box"><a href="{% url 'cart:checkout' %}" class="ml-auto btn hvr-hover">Checkout</a> </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End Cart -->
+
+{% endblock %}

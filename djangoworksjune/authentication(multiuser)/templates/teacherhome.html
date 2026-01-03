@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container w-75 p-5 mt-5 border border-2 fst-italic text-center">
+  <h3>Welcome To TeacherHome page</h3>
+  {% if user.is_authenticated %}
+           {{user.username}}
+  {% else %}
+              guest
+  {% endif %}
+</div>
+{% endblock %}

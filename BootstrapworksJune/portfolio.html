@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    .navbar-light .navbar-nav .nav-link
+{
+    color:#0d6efd;
+    font-size:20px;
+    }
+    th{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;}
+</style>
+
+</head>
+<body>
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand fs-2 fw-bold text-primary" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#profile">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#">Education</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#">Works</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+
+
+    </div>
+  </div>
+</nav>
+
+<!--Profile-->
+<div class="container-fluid bg-primary" id="profile">
+
+    <div class="row">
+        <div class="col-6 text-light d-flex justify-content-center align-items-center">
+            <div>
+                <h3>Hello my name is,</h3>
+                <h2>Milan Thomas</h2>
+                <h2>Full Stack Developer</h2>
+                <button class="btn btn-outline-light rounded-pill mt-3 me-3 px-3 py-3">Download CV</button>
+                <button class="btn btn-outline-light rounded-pill mt-3 px-3 py-3">Play Videos</button>
+            </div>
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center p-3">
+            <img src="milan.jpg" class="rounded-circle" width="300px" height="300px">
+        </div>
+    </div>
+
+</div>
+
+
+<!--About-->
+<div class="container border border-2 shadow mt-5 mb-5" id="about">
+    <h2 class="text-center  text-primary mt-3">About Me</h2>
+
+    <div class="card mb-5 mx-auto mt-2 p-2" style="max-width: 80%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="milan.jpg" class="rounded-start" height="300px" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">Full Stack Developer</h4>
+        <p class="card-text mt-2" style="line-height:2;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+          <div class="row">
+           <div class="col-6 mb-3"><b>Name:</b>Milan Thomas</div>
+            <div class="col-6 mb-3"><b>Age:</b>23</div>
+            <div class="col-6 mb-3"><b>Place:</b>Ernakulam</div>
+            <div class="col-6 mb-3"><b>Gender:</b>Female</div>
+            <div class="col-6 mb-3"><b>Phone:</b>9876543246</div>
+            <div class="col-6 mb-3"><b>Email:</b>milanthomas@gmail.com</div>
+       </div>
+          <button class="btn btn-outline-primary p-2 mt-2 me-3">Let's Talk</button>
+           <button class="btn btn-outline-primary p-2 mt-2">Contact Me</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<!--Skills-->
+<div class="container border border-2 shadow mt-5 mb-5 p-5" id="skills">
+    <h2 class="text-center  text-primary mt-3">My Skills</h2>
+
+    <div class="row">
+        <div class="col-6 mb-3">
+            <div class="d-flex justify-content-between">
+                <span>HTML</span>
+                <span>90%</span>
+            </div>
+
+            <div class="progress" style="height: 20px;">
+  <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 90%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+        </div>
+         <div class="col-6 mb-3"> <div class="d-flex justify-content-between">
+                <span>CSS</span>
+                <span>85%</span>
+            </div>
+
+            <div class="progress" style="height: 20px;">
+  <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 85%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div></div>
+         <div class="col-6 mb-3"> <div class="d-flex justify-content-between">
+                <span>Javascript</span>
+                <span>90%</span>
+            </div>
+
+            <div class="progress" style="height: 20px;">
+  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 90%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div></div>
+         <div class="col-6 mb-3"> <div class="d-flex justify-content-between">
+                <span>Bootstrap</span>
+                <span>95%</span>
+            </div>
+
+            <div class="progress" style="height: 20px;">
+  <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 95%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div></div>
+         <div class="col-6 mb-3"> <div class="d-flex justify-content-between">
+                <span>PYTHON</span>
+                <span>90%</span>
+            </div>
+
+            <div class="progress" style="height: 20px;">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 90%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div></div>
+         <div class="col-6 mb-3"> <div class="d-flex justify-content-between">
+                <span>Django</span>
+                <span>85%</span>
+            </div>
+
+            <div class="progress" style="height: 20px;">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 85%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div></div>
+    </div>
+
+
+</div>
+<!--Education -->
+<div class="container border border-2 shadow mt-5 mb-5 p-5">
+    <h2 class="text-center  text-primary mt-3">Educational Qualifications</h2>
+
+    <table class="table table-bordered mt-3">
+        <tr>
+            <th>Course</th>
+             <th>University</th>
+             <th>Aggregate</th>
+        </tr>
+        <tr>
+            <td>MTech</td>
+             <td>MG</td>
+             <td>80%</td>
+        </tr>
+        <tr>
+            <td>BTech</td>
+             <td>MG</td>
+             <td>85%</td>
+        </tr>
+    </table>
+
+
+</div>
+<!--works -->
+<div class="container border border-2 shadow mt-5 mb-5 p-5">
+    <h2 class="text-center  text-primary mt-3">Projects</h2>
+    <div class="row">
+        <div class="col-4"><div class="card mx-auto" style="width: 18rem;">
+  <img src="image1.jpg" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title">Ecommerce</h5>
+
+    <a href="#" class="btn btn-primary">Play Video</a>
+  </div>
+</div></div>
+         <div class="col-4"><div class="card mx-auto" style="width: 18rem;">
+  <img src="image1.jpg" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title">Ecommerce</h5>
+
+    <a href="#" class="btn btn-primary">Play Video</a>
+  </div>
+</div></div>
+         <div class="col-4"><div class="card mx-auto" style="width: 18rem;">
+  <img src="image1.jpg" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title">Ecommerce</h5>
+
+    <a href="#" class="btn btn-primary">Play Video</a>
+  </div>
+</div></div>
+    </div></div>
+
+<div class="container border border-2 shadow mt-5 mb-5 p-5">
+    <h2 class="text-center  text-primary mt-3">Contact Me</h2>
+    <form>
+    <div class="mb-3">
+
+        <label class="form-label">Full Name</label>
+        <div class="row">
+            <div class="col-6"><input type="text" class="form-control"></div>
+            <div class="col-6"><input type="text" class="form-control"></div>
+        </div>
+    </div>
+     <div class="mb-3">
+
+        <label class="form-label">Email Address</label>
+        <input type="text" class="form-control">
+     </div>
+        <div class="mb-3">
+
+        <label class="form-label">Message</label>
+        <textarea  class="form-control">Write your message Here</textarea>
+     </div>
+<div class="mb-3">
+
+
+        <input type="submit" class="form-control btn-primary">
+     </div>
+
+    </div>
+
+
+</form>
+
+
+
+</div>
+
+</body>
+</html>
