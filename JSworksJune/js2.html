@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        function f(){
-            var n=document.getElementById('i').value;
-            var f=1;
-            for(let i=1;i<=n;i++){
-                f=f*i;
-            }
-            // alert(f);
-            document.getElementById('r').innerHTML=f;
 
+        function f() {
+            var n = document.getElementById('i').value;
+            //factorial
+            let fact = 1;
+            for (let i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+            document.getElementById('h').innerHTML = `Factorial is:${fact}`;
         }
     </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
-<input type="number" id="i">
-<button onclick="f()">Click</button><br>
-<!--Result<input type="number" id="r">-->
-Result<h1 id="r"></h1>
+<div class="container w-25 p-5 mt-5 border border-2">
+
+    <div class="mb-3">
+        <input type="number" id="i" class="form-control" placeholder="Enter number">
+    </div>
+    <div class="mb-3">
+        <input type="button" onclick="f()" class="btn btn-danger" value="Click">
+    </div>
+
+
+    <h4 id="h">hello</h4>
+
+</div>
 
 </body>
 </html>

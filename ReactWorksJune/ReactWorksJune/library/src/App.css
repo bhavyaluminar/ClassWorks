@@ -1,1 +1,36 @@
 
+.navbar-light .navbar-nav .nav-link,.navbar-light .navbar-brand {
+    color: rgba(189, 205, 218);
+    
+
+}
+a{
+  text-decoration:none;
+}
+.navbar-light .navbar-brand {
+  font-size:36px;
+}
+.bg-light{
+  background-color: #03035e8f !important;
+}
+body{
+  background-color:rgba(189, 205, 218);
+  color:#03035e8f;
+}
+.btn-outline-success{
+  background-color:rgba(189, 205, 218)!important;
+  color:#03035e8f;
+  font-size:20px;
+
+}
+.btn-outline-success:active{
+  background-color:rgba(189, 205, 218)!important;
+  color:#03035e8f;
+ font-size:20px;
+}
+.btn-outline-success:hover{
+  background-color:rgba(189, 205, 218)!important;
+  color:#03035e8f;
+   font-size:20px;
+
+}

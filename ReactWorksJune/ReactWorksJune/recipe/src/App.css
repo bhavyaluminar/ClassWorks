@@ -1,0 +1,39 @@
+
+
+.navbar-light .navbar-nav .nav-link,.navbar-light .navbar-brand {
+    color: rgb(108, 113, 108);
+    
+
+}
+a{
+  text-decoration:none;
+}
+.navbar-light .navbar-brand {
+  font-size:36px;
+}
+.bg-light{
+  background-color:rgb(21, 201, 75)!important;
+
+}
+body{
+  background-color:rgb(21, 201, 75);
+  color:rgb(108, 113, 108)
+}
+.btn-outline-success{
+  background-color:rgb(21, 201, 75)!important;
+  color:rgb(108, 113, 108);
+
+
+
+}
+.btn-outline-success:active{
+   background-color:rgb(21, 201, 75)!important;
+   color:rgb(108, 113, 108);
+
+}
+.btn-outline-success:hover{
+   background-color:rgb(21, 201, 75)!important;
+    color:rgb(108, 113, 108);
+  
+
+}

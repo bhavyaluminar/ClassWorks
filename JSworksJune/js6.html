@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<script>
-    function f(){
-        //event.preventDefault()
-      alert('hello') 
-    }
-</script>
+    <script>
+        function f(x) {
+            // var e=document.getElementsByClassName('class1')
+            // // e[1].style.color="red";
+            // for(let i of e){
+            //     i.style.color="red";
+            // }
+
+// var e=document.getElementsByTagName('p')
+//             // e[0].style.color="red";
+//             for(let i of e){
+//                 i.style.color="red";
+//                 i.textContent="new paragraph";
+//
+//             }
+
+
+            var e=document.querySelectorAll('.class1')
+           for(let i of e){
+               i.style.color=x;
+           }
+
+        }
+    </script>
 </head>
 <body>
-<h1>EVENTS IN JS</h1>
-<!--//onclick-->
-<!--//onchange-->
-<!--//onmouseover-->
-<!--//onsubmit-->
-<!--//onkeydown-->
-
-<form method="post" onsubmit="f(event)">
-    <input type="text" id="i"><br>
-    <input type="submit">
-</form>
-<h1 onmouseover="alert('hello')">JAVASCRIPT</h1>
+<h1 class="class1">Heading1</h1>
+<p>Paragraph1</p>
+<p>Paragraph2</p>
+<h2 class="class1">Heading2</h2>
+<p>Paragraph3</p>
+<button onclick="f('red')">Click</button>
 </body>
 </html>

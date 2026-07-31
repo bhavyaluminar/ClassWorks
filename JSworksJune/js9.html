@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .class1{
+            color:red;
+            text-align:center;
+        }
+        .class2{
+            background-color:yellow;
+        }
+    </style>
+<script>
+    function addclass(){
+        document.getElementById('h1').classList.add('class1')
+    }
+    function removeclass(){
+        document.getElementById('h1').classList.remove('class1')
+    }
+    function addbackground(){
+       document.body.classList.toggle('class2')
+    }
+</script>
+
+</head>
+<body>
+<h1 id="h1">Heading1</h1>
+<p>Paragraph</p>
+<p>Paragraph</p>
+<button onclick="addclass()">AddColor</button>
+<button onclick="removeclass()">RemoveColor</button>
+<button onclick="addbackground()">AddBackgroundColor</button>
+</body>
+</html>

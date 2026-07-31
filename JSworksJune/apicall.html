@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script>
+        async function show(){
+
+            const url="https://jsonplaceholder.typicode.com/users";
+
+            const response=await fetch(url)
+
+            console.log(response)//raw response
+
+            const data=await response.json() //json data
+
+            console.log(data)
+
+            //array.map(function)
+
+            //[1,2,3,4].map((u)=>u**2))
+
+
+            data.map((u)=>{
+
+                const t=document.createElement('tr');
+                const td1=document.createElement('td');
+                const td2=document.createElement('td');
+                td1.textContent=u.name;
+                td2.textContent=u.email;
+
+                t.appendChild(td1);
+                t.appendChild(td2);
+
+                document.getElementById('i').appendChild(t);
+
+                // const l=document.createElement('li')
+                // l.textContent=`${u.name}....${u.email}`;
+                // document.getElementById('i').appendChild(l)
+
+
+                }
+
+            )
+
+        }
+    </script>
+</head>
+<body>
+<div class="container w-50">
+<h1>User Details</h1>
+<button onclick="show()">Show</button>
+<table id="i" class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+</table></div>
+</body>
+</html>

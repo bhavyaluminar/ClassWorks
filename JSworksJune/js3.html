@@ -2,50 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Title</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script>
+      var count=0;
 
-<script>
-  var n=0;
+      function increment(){
 
-function increment(){
-n=n+1;
-document.getElementById('h').innerHTML=n;
-}
-function decrement(){
-n=n-1;
-document.getElementById('h').innerHTML=n;
-}
-function reset(){
-n=0;
-document.getElementById('h').innerHTML=n;
-}
+          count++;
+          document.getElementById('h').innerHTML=count;
+      }
+      function decrement(){
+          count--;
+          document.getElementById('h').innerHTML=count;
+      }
+      function reset(){
+         count=0;
+          document.getElementById('h').innerHTML=count;
+      }
+  </script>
 
-</script>
 
-  </head>
-<body class="bg-secondary">
-    <div class="container w-25 p-5 border border-2 shadow mt-5 text-light">
 
-      <div id="div1" class="mb-3 text-center">
-        <h2>Counter App</h2>
-        <p>Click Button to Count</p>
-      </div>
-      <div id="div2" class="mb-5 text-center">
-        <h2 id="h">0</h2>
-      </div>
-      <div id="div3" class="mb-3 d-flex justify-content-evenly">
-        <button class="btn btn-light btn-lg" onclick="increment()">+</button>
-         <button class="btn btn-light btn-lg" onclick="decrement()">-</button>
-      </div>
-      <div id="div4" class="mb-3 d-flex justify-content-center mt-5">
-        <button class="btn btn-light btn-lg" onclick="reset()">RESET</button>
-         
-      </div>
 
+</head>
+
+<body>
+
+<div class="container w-25 p-5 mt-5 border border-3 border-danger">
+    <div class="mb-3">
+       <h2 class="text-center text-danger">Counter App</h2>
     </div>
-    
+     <div class="mb-3">
+       <h2 class="text-center text-primary" id="h">0</h2>
+    </div>
 
+    <div class="mb-3">
+       <p class="text-center text-primary">Click button to Count</p>
+    </div>
+    <div class="mb-3 d-flex justify-content-between">
+        <input type="button" onclick="increment()" id="i" class="btn btn-success"  value="+">
+        <input type="button" onclick="decrement()" id="d" class="btn btn-danger"  value="-">
+    </div>
+    <div class="mt-5 text-center">
+        <input type="button" onclick="reset()" class="btn btn-warning" value="Reset">
+    </div>
+
+
+
+
+</div>
 </body>
 </html>

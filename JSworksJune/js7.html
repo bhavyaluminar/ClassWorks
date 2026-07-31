@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script>
+        function f(){
+            // const e=document.createElement('h1')
+            // e.textContent="new heading"
+            // e.style.color="red"
+            // document.body.appendChild(e)
+
+            // const e=document.createElement('img')
+            // e.src="bg11.jpg"
+            // e.style.height="200px"
+            // e.style.width="300px"
+            // document.body.appendChild(e)
+            content=document.getElementById('i').value
+            const e=document.createElement('li')
+            e.textContent=content
+
+            document.getElementById('o').appendChild(e)
+        }
+    </script>
+</head>
+<body>
+<h1>Javascript</h1>
+<input type="text" id="i">
+<button onclick="f()">Click</button>
+<ol id="o"></ol>
+</body>
+</html>

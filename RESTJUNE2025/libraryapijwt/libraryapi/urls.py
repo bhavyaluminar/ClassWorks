@@ -2,7 +2,7 @@
 URL configuration for libraryapi project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    https://docs.djangoproject.com/en/6.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,24 +16,40 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from rest_framework.routers import SimpleRouter
 from books import views
+from rest_framework.routers import DefaultRouter
 
-router=SimpleRouter()
+router=DefaultRouter()
 router.register('books',views.BookView)
 router.register('users',views.UserView)
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+#from rest_framework.authtoken.views import obtain_auth_token
+
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+#path('login/',obtain_auth_token),
+
+   #to obtain access token /login
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+
+
+
+    path('logout',views.LogoutView.as_view()),
+    path('',include(router.urls)),
+    # path('books',views.BookList.as_view()),
+    # path('bookdetail/<int:pk>',views.BookDetail.as_view()),
     path('',include(router.urls)),
     path('search',views.SearchAPIView.as_view()),
 
-path('logout', views.LogoutView.as_view()),
-path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
-
-
 
 from django.conf.urls.static import static
 from django.conf import settings

@@ -1,57 +1,63 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import {searchbookdetails} from '../services/Apicalls'
+import { searchbookdetails } from '../services/apicalls'
 
 function Search() {
-  const [books, setbooks] = useState([])
-   const {search}=useLocation()//used to provide the details of url address.here search represents queryparametrs in the address
-    console.log(search) //?id=3
 
-    const queryParams=new URLSearchParams(search)//changed into object format {id:3}
-    const word=queryParams.get('w') //reads the value from the key id 
-    console.log(word) 
-    async function searchbooks(){
+const [books,setbooks]=useState([])
+const {search}=useLocation()         //search means portion starting with ?
+  console.log(search)                             //?id=5
 
-      let res=await searchbookdetails(word)
-      setbooks(res.data)
+  
+  const queryParams=new URLSearchParams(search)    
+
+  const word=queryParams.get('w')                    
+
+console.log(word)  
+
+
+
+async function searchbooks(){
+  let res=await searchbookdetails(word)
+  console.log(res.data)
+  
+  setbooks(res.data)
 }
 
 
-
-    useEffect(()=>{searchbooks()},[])
+  useEffect(()=>{searchbooks()},[])
 
   return (
     <div>
-        <div class="container text-center p-5 mt-3 w-50 fst-italic border border-3 shadow">
+    <div class="container w-50   p-5  mt-3">
+        <h4 class="text-center">Search Results</h4>
 
-      <h3 class="mt-3 mb-3">Search</h3>
-      {Array.isArray(books)
-      ?<table class="table table-bordered">
-          <thead>
-            <tr>  
-              <th>Title</th> <th>Author </th><th>Pages</th><th>Price </th><th>Language </th><th>Image </th>
-             
-            </tr>
-          </thead>
+{Array.isArray(books)?
 
+        <table class="table table-bordered">
+  <thead>
+          <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Price</th>
+            <th>Language</th>
+          
+          </tr></thead>
           <tbody>
-            {books.map(
-              (i) => <tr>
-                <td class="pt-5">{i.title}</td>
-                <td class="pt-5">{i.author}</td>
-                <td class="pt-5">{i.pages}</td>
-                <td class="pt-5">{i.price}</td>
-                <td class="pt-5">{i.language}</td>
-                <td class="p-3"><img src={i.image_url} height="100px" width="100px"></img></td>
-                
-              </tr>
-            )
-            }
-          </tbody>
-</table>:<h2>No Results</h2>}
-       
-      
-    </div>
+          {books.map((i)=><tr>
+            <td><img src={i.image_url}></img></td>
+            <td>{i.title}</td>
+            <td>{i.author}</td>
+            <td>{i.pages}</td>
+            <td>{i.price}</td>
+            <td>{i.language}</td>
+            
+            
+          </tr>)}</tbody>
+        </table>:<div>No Search Results</div>}
+                     </div>
     </div>
   )
 }

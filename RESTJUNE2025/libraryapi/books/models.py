@@ -2,9 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
-    title=models.CharField(max_length=30)
-    author=models.CharField(max_length=30)
-    pages=models.IntegerField()
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
     price=models.IntegerField()
-    language=models.CharField(max_length=30)
+    pages=models.IntegerField()
+    language = models.CharField(max_length=100)
     image=models.ImageField(upload_to='books')
+
+
